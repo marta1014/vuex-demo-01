@@ -5,6 +5,18 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$store = store
+
+router.beforeEach((to, from, next) => {
+  if (store.state.userInfo || to.path === '/login') {
+    next()
+  } else {
+    next({
+      path: '/login'
+    })
+  }
+})
+
 new Vue({
   router,
   store,
