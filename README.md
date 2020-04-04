@@ -1,4 +1,4 @@
-# permission01
+# vuex-demo
 
 ## Project setup
 ```
